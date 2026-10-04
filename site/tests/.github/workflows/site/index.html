@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShipSafe Student Roster</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">CI/CD protected demo</p>
+    <h1>ShipSafe Student Roster</h1>
+    <p>Add and search fictional student records. Automated tests protect every deployment.</p>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <h2>Add a student</h2>
+      <form id="student-form">
+        <label>
+          Student ID
+          <input id="student-id" name="studentId" placeholder="S004" required>
+        </label>
+        <label>
+          Full name
+          <input id="student-name" name="studentName" placeholder="Jordan Lee" required>
+        </label>
+        <label>
+          Program
+          <select id="student-program" name="studentProgram" required>
+            <option value="">Choose a program</option>
+            <option>Computer Science</option>
+            <option>Data Science</option>
+            <option>Business</option>
+          </select>
+        </label>
+        <button type="submit">Add student</button>
+        <p id="form-message" class="status" role="status"></p>
+      </form>
+    </section>
+
+    <section class="card roster-card">
+      <div class="roster-heading">
+        <div>
+          <p class="eyebrow">Current records</p>
+          <h2>Student roster</h2>
+        </div>
+        <p id="student-count" class="count"></p>
+      </div>
+
+      <div class="filters">
+        <label>
+          Search students
+          <input id="search-input" type="search" placeholder="Search by ID, name, or program">
+        </label>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Program</th>
+            </tr>
+          </thead>
+          <tbody id="student-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="student-utils.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
